@@ -39,7 +39,14 @@ function newBook() {
                 p.textContent = `${upperCategory}: ${book[key]}`;
                 div.appendChild(p);
                 i = i + 1;
+
             }
       }
     });   
 }
+
+const dialog = document.querySelector('dialog')
+const openBtn = document.querySelector('dialog + button');
+const closeBtn = document.querySelector('dialog button');
+openBtn.addEventListener('click', () => dialog.showModal());
+closeBtn.addEventListener('click', () => dialog.close());

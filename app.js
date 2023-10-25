@@ -20,5 +20,7 @@ Book.prototype = {
     },
 };
 
-const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', '295', 'not read yet');
-const theHobbitTwo = new Book('The Hobbit Two', 'J.R.R. Tolkien', '305', 'not read yet');
+const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', '295', 'read');
+const theHobbitTwo = new Book('The Hobbit Two', 'J.R.R. Tolkien', '305', 'not read');
+const theHobbitThree = new Book('The Hobbit Three', 'J.R.R. Tolkien', '340', 'not read');
+

@@ -2,4 +2,21 @@
 
 body {
     font-family: 'Raleway', sans-serif;
+    background-color: rgb(241, 241, 241);
+}
+
+.card {
+    width: 250px;
+    height: 275px;
+    background-color: white;
+    box-shadow: 5px 5px 10px -10px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 24px 32px;
 }

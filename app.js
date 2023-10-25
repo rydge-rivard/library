@@ -47,16 +47,25 @@ function newBook() {
 
 const dialog = document.querySelector('dialog')
 const openBtn = document.querySelector('dialog ~ button');
-const input = dialog.querySelector('input');
+const inputs = dialog.querySelectorAll('input');
 const closeBtn = document.querySelector('button');
 const confirmBtn = dialog.querySelector("#confirmBtn");
 const span = document.querySelector('span');
 
 openBtn.addEventListener('click', () => dialog.showModal());
 
+function mapInputValues (array) {
+    const bookArray = [];
+    array.forEach(element => {
+        bookArray.push(element.value);
+    });
+    console.log(bookArray);
+    return bookArray;
+}
+
 confirmBtn.addEventListener('click', (event) => {
     event.preventDefault();
-    span.textContent = input.value;
+    mapInputValues(inputs);
     dialog.close();
     }
 );

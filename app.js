@@ -46,7 +46,17 @@ function newBook() {
 }
 
 const dialog = document.querySelector('dialog')
-const openBtn = document.querySelector('dialog + button');
-const closeBtn = document.querySelector('dialog button');
+const openBtn = document.querySelector('dialog ~ button');
+const input = dialog.querySelector('input');
+const closeBtn = document.querySelector('button');
+const confirmBtn = dialog.querySelector("#confirmBtn");
+const span = document.querySelector('span');
+
 openBtn.addEventListener('click', () => dialog.showModal());
-closeBtn.addEventListener('click', () => dialog.close());
+
+confirmBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    span.textContent = input.value;
+    dialog.close();
+    }
+);

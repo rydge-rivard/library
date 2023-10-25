@@ -30,4 +30,9 @@ p {
       green
     );
     opacity: 0.75;
-  }
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}

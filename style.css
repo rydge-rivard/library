@@ -12,11 +12,11 @@ body {
     box-shadow: 5px 5px 10px -10px;
 }
 
-ul {
+p {
     display: flex;
     flex-direction: column;
     gap: 20px;
     list-style: none;
     margin: 0;
-    padding: 24px 32px;
+    padding: 12px 24px;
 }

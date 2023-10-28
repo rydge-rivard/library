@@ -7,8 +7,6 @@ function Book(title, author, pages, read) {
     this.read = read;
     this.info(this);
     this.addBookToLibrary(this);
-    console.log(this.info());2
-    console.log(myLibrary);
 }
 
 Book.prototype = {
@@ -32,7 +30,6 @@ function newBook() {
         let i = 0;
         for(let key in book){
             if(key === 'title' || key === 'author' || key === 'pages' || key === 'read') {
-                console.log(book[key]);
                 let category = Object.keys(book)[i];
                 let upperCategory = category.charAt(0).toUpperCase() + category.slice(1);
                 const p = document.createElement('p');
@@ -47,25 +44,40 @@ function newBook() {
 
 const dialog = document.querySelector('dialog')
 const openBtn = document.querySelector('dialog ~ button');
-const inputs = dialog.querySelectorAll('input');
 const closeBtn = document.querySelector('button');
 const confirmBtn = dialog.querySelector("#confirmBtn");
 const span = document.querySelector('span');
 
 openBtn.addEventListener('click', () => dialog.showModal());
 
-function mapInputValues (array) {
-    const bookArray = [];
-    array.forEach(element => {
-        bookArray.push(element.value);
-    });
-    console.log(bookArray);
-    return bookArray;
-}
-
 confirmBtn.addEventListener('click', (event) => {
     event.preventDefault();
-    mapInputValues(inputs);
+    const inputs = dialog.querySelectorAll('input');
+    const bookObj = mapInputValues (inputs);
+    createNewBookCard (bookObj);
     dialog.close();
     }
 );
+
+function createNewBookCard (bookObj) {
+    let i = 0;
+    const div = document.createElement('div');
+    div.classList.add('card');
+    document.body.appendChild(div);
+    for(let key in bookObj){
+            if(typeof bookObj[key] === 'string') {
+                let category = Object.keys(bookObj)[i];
+                let upperCategory = category.charAt(0).toUpperCase() + category.slice(1);
+                const p = document.createElement('p');
+                p.textContent = `${upperCategory}: ${bookObj[key]}`;
+                div.appendChild(p);
+                i = i + 1;
+            }
+      }
+}
+
+function mapInputValues (array) {
+    const bookArray = [];
+    array.forEach((element) => bookArray.push(element.value));
+    return new Book (bookArray[0], bookArray[1], bookArray[2], 'not read');
+}

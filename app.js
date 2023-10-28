@@ -63,6 +63,7 @@ function createDeleteButton (div) {
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Delete'
     deleteBtn.classList.add('delete');
+    deleteBtn.addEventListener('click', () => deleteBtn.parentElement.remove());
     div.appendChild(deleteBtn);
 }
 

@@ -46,7 +46,6 @@ const dialog = document.querySelector('dialog')
 const openBtn = document.querySelector('dialog ~ button');
 const closeBtn = document.querySelector('button');
 const confirmBtn = dialog.querySelector("#confirmBtn");
-const span = document.querySelector('span');
 
 openBtn.addEventListener('click', () => dialog.showModal());
 
@@ -55,6 +54,7 @@ confirmBtn.addEventListener('click', (event) => {
     const inputs = dialog.querySelectorAll('input');
     const bookObj = mapInputValues (inputs);
     createNewBookCard (bookObj);
+    inputs.forEach(input => input.value = '');
     dialog.close();
     }
 );
@@ -65,15 +65,16 @@ function createNewBookCard (bookObj) {
     div.classList.add('card');
     document.body.appendChild(div);
     for(let key in bookObj){
-            if(typeof bookObj[key] === 'string') {
-                let category = Object.keys(bookObj)[i];
-                let upperCategory = category.charAt(0).toUpperCase() + category.slice(1);
-                const p = document.createElement('p');
-                p.textContent = `${upperCategory}: ${bookObj[key]}`;
-                div.appendChild(p);
-                i = i + 1;
-            }
-      }
+        if(typeof bookObj[key] === 'string') {
+            let category = Object.keys(bookObj)[i];
+            let upperCategory = category.charAt(0).toUpperCase() + category.slice(1);
+            const p = document.createElement('p');
+            p.textContent = `${upperCategory}: ${bookObj[key]}`;
+            div.appendChild(p);
+            i = i + 1;
+        }
+    }
+    
 }
 
 function mapInputValues (array) {

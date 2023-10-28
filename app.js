@@ -57,6 +57,7 @@ function createNewBookCard (bookObj) {
         }
     }
     createDeleteButton (div);
+    createMarkReadButton (div);
 }
 
 function createDeleteButton (div) {
@@ -65,6 +66,13 @@ function createDeleteButton (div) {
     deleteBtn.classList.add('delete');
     deleteBtn.addEventListener('click', () => deleteBtn.parentElement.remove());
     div.appendChild(deleteBtn);
+}
+
+function createMarkReadButton (div) {
+    const readBtn = document.createElement('button');
+    readBtn.textContent = 'Mark Read'
+    readBtn.classList.add('read');
+    div.appendChild(readBtn);
 }
 
 function mapInputValues (array) {

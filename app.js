@@ -39,6 +39,7 @@ function createNewBookCard (bookObj) {
     let i = 0;
     const div = document.createElement('div');
     div.classList.add('card');
+    div.setAttribute('id', `book-id-${myLibrary.length}`);
     document.body.appendChild(div);
     for(let key in bookObj){
         if(typeof bookObj[key] === 'string') {

@@ -35,6 +35,12 @@ confirmBtn.addEventListener('click', (event) => {
     }
 );
 
+function mapInputValues (array) {
+    const bookArray = [];
+    array.forEach((element) => bookArray.push(element.value));
+    return new Book (bookArray[0], bookArray[1], bookArray[2], bookArray[3]);
+}
+
 function createNewBookCard (bookObj) {
     let i = 0;
     const div = document.createElement('div');
@@ -79,13 +85,6 @@ function createMarkReadButton (div) {
 }
 
 function markBookAsRead (parentElement) {
-    console.log('click');
     const p = parentElement.querySelector('.read-p');
     p.textContent === 'Read: Yes' ? p.textContent = 'Read: No' : p.textContent = 'Read: Yes';
-}
-
-function mapInputValues (array) {
-    const bookArray = [];
-    array.forEach((element) => bookArray.push(element.value));
-    return new Book (bookArray[0], bookArray[1], bookArray[2], bookArray[3]);
 }

@@ -69,7 +69,12 @@ function createNewBookCard (bookObj) {
             let category = Object.keys(bookObj)[i];
             let upperCategory = category.charAt(0).toUpperCase() + category.slice(1);
             const p = document.createElement('p');
-            p.textContent = `${upperCategory}: ${bookObj[key]}`;
+            if (key === 'read') {
+                const readStatus = bookObj[key] === 'on' ? 'Yes' : 'No';
+                p.textContent = `${upperCategory}: ${readStatus}`;
+            } else {
+                p.textContent = `${upperCategory}: ${bookObj[key]}`;
+            }
             div.appendChild(p);
             i = i + 1;
         }
@@ -80,5 +85,5 @@ function createNewBookCard (bookObj) {
 function mapInputValues (array) {
     const bookArray = [];
     array.forEach((element) => bookArray.push(element.value));
-    return new Book (bookArray[0], bookArray[1], bookArray[2], 'not read');
+    return new Book (bookArray[0], bookArray[1], bookArray[2], bookArray[3]);
 }

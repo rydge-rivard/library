@@ -10,6 +10,7 @@ body {
     height: 275px;
     background-color: white;
     box-shadow: 5px 5px 10px -10px;
+    margin: 16px;
 }
 
 p {

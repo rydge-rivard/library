@@ -39,7 +39,7 @@ function createNewBookCard (bookObj) {
     let i = 0;
     const div = document.createElement('div');
     div.classList.add('card');
-    div.setAttribute('id', `book-id-${myLibrary.length}`);
+    div.setAttribute('id', myLibrary.length);
     document.body.appendChild(div);
     for(let key in bookObj){
         if(typeof bookObj[key] === 'string') {
@@ -55,7 +55,15 @@ function createNewBookCard (bookObj) {
             div.appendChild(p);
             i = i + 1;
         }
-    }   
+    }
+    createDeleteButton (div);
+}
+
+function createDeleteButton (div) {
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Delete'
+    deleteBtn.classList.add('delete');
+    div.appendChild(deleteBtn);
 }
 
 function mapInputValues (array) {

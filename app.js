@@ -48,6 +48,7 @@ function createNewBookCard (bookObj) {
             const p = document.createElement('p');
             if (key === 'read') {
                 const readStatus = bookObj[key] === 'on' ? 'Yes' : 'No';
+                p.classList.add('read-p');
                 p.textContent = `${upperCategory}: ${readStatus}`;
             } else {
                 p.textContent = `${upperCategory}: ${bookObj[key]}`;
@@ -58,6 +59,7 @@ function createNewBookCard (bookObj) {
     }
     createDeleteButton (div);
     createMarkReadButton (div);
+    div.ch
 }
 
 function createDeleteButton (div) {
@@ -70,9 +72,16 @@ function createDeleteButton (div) {
 
 function createMarkReadButton (div) {
     const readBtn = document.createElement('button');
-    readBtn.textContent = 'Mark Read'
+    readBtn.textContent = 'Toggle Read'
     readBtn.classList.add('read');
+    readBtn.addEventListener('click', () => markBookAsRead (readBtn.parentElement));
     div.appendChild(readBtn);
+}
+
+function markBookAsRead (parentElement) {
+    console.log('click');
+    const p = parentElement.querySelector('.read-p');
+    p.textContent === 'Read: Yes' ? p.textContent = 'Read: No' : p.textContent = 'Read: Yes';
 }
 
 function mapInputValues (array) {

@@ -106,3 +106,8 @@ legend {
   font-weight: 600;
   font-size: 18px;
 }
+
+.delete,
+.read {
+  margin: 0 0 0 24px;
+}

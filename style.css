@@ -1,67 +1,108 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap");
 
 body {
-    font-family: 'Raleway', sans-serif;
-    background-color: rgb(241, 241, 241);
+  font-family: "Raleway", sans-serif;
+  background-color: rgb(241, 241, 241);
 }
 
 .card {
-    width: 250px;
-    height: 275px;
-    background-color: white;
-    box-shadow: 5px 5px 10px -10px;
-    margin: 16px;
+  width: 250px;
+  height: 275px;
+  background-color: white;
+  box-shadow: 5px 5px 10px -10px;
+  margin: 16px;
 }
 
 p {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    list-style: none;
-    margin: 0;
-    padding: 12px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 12px 24px;
 }
 
 ::backdrop {
-    background-image: linear-gradient(
-      45deg,
-      magenta,
-      rebeccapurple,
-      dodgerblue,
-      green
-    );
-    opacity: 0.75;
+  background-image: linear-gradient(
+    45deg,
+    magenta,
+    rebeccapurple,
+    dodgerblue,
+    green
+  );
+  opacity: 0.75;
 }
 
 ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 12px 6px;
+  display: flex;
+}
+
+label {
+  flex: 1;
+}
+
+fieldset {
+  width: 300px;
+  border: none;
+  padding: 0 12px 24px 12px;
 }
 
 button {
-    margin: 0 0 0 24px;
-    padding: 8px 16px;
+  padding: 8px 16px;
+}
+
+form > div {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
 }
 
 .delete,
 .read {
-    color: white;
-    border: none;
-    font-weight: 900;
+  color: white;
+  border: none;
+  font-weight: 900;
 }
 
 .delete {
-    background-color: rgb(209, 30, 30);
+  background-color: rgb(209, 30, 30);
 }
 
 .delete:hover {
-    background-color: rgb(206, 63, 63);
+  background-color: rgb(206, 63, 63);
 }
 
 .read {
-    background-color: green;
+  background-color: green;
 }
 
 .read:hover {
-    background-color: rgb(57, 151, 57);
+  background-color: rgb(57, 151, 57);
+}
+
+input:invalid:required {
+  background-color: rgb(255, 0, 0, 30%);
+}
+
+input {
+  width: 200px;
+  border: 1px solid black;
+  border-radius: 2px;
+  /* background-color: rgb(214, 214, 214); */
+  padding: 3px 6px;
+}
+
+input#read {
+  width: 50px;
+}
+
+legend {
+  font-weight: 600;
+  font-size: 18px;
 }

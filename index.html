@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="app.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <h2>library</h2>
     <dialog>
-        <form action="" method="">
-            <fieldset>
-                <legend>Add New Book</legend>
-                <ul>
-                    <li>
-                        <label for="title">Title</label>
-                        <input type="text" name="title" id="title">
-                    </li>
-                    <li>
-                        <label for="author">Author</label>
-                        <input type="text" name="author" id="author">
-                    </li>
-                    <li>
-                        <label for="pages">Pages</label>
-                        <input type="number" name="pages" id="pages">
-                    </li>
-                </ul>
-                <label for="read">Have you read this book?</label>
-                <input type="checkbox" name="read" id="read">
-            </fieldset>
-            <div>
-                <button value="cancel" formmethod="dialog">Cancel</button>
-                <button id="confirmBtn" value="default">Submit</button>
-            </div>
-        </form>
+      <form action="" method="">
+        <fieldset>
+          <legend>Add New Book</legend>
+          <ul>
+            <li>
+              <label for="title">Title</label>
+              <input type="text" name="title" id="title" required />
+            </li>
+            <li>
+              <label for="author">Author</label>
+              <input type="text" name="author" id="author" required />
+            </li>
+            <li>
+              <label for="pages">Pages</label>
+              <input type="number" name="pages" id="pages" required />
+            </li>
+          </ul>
+          <label for="read">Have you read this book?</label>
+          <input type="checkbox" name="read" id="read" required />
+        </fieldset>
+        <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="confirmBtn" value="default">Submit</button>
+        </div>
+      </form>
     </dialog>
     <button>New Book</button>
-</body>
+  </body>
 </html>

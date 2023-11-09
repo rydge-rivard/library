@@ -22,17 +22,23 @@ const dialog = document.querySelector("dialog");
 const openBtn = document.querySelector("dialog ~ button");
 const closeBtn = document.querySelector("button");
 const confirmBtn = dialog.querySelector("#confirmBtn");
+const form = document.querySelector("form");
 
 openBtn.addEventListener("click", () => dialog.showModal());
+closeBtn.addEventListener("click", () => dialog.close());
 
-confirmBtn.addEventListener("click", (event) => {
+form.addEventListener("submit", (event) => {
   event.preventDefault();
   const inputs = dialog.querySelectorAll("input");
   const bookObj = mapInputValues(inputs);
   createNewBookCard(bookObj);
+  closeModal(inputs);
+});
+
+function closeModal(inputs) {
   inputs.forEach((input) => (input.value = ""));
   dialog.close();
-});
+}
 
 function mapInputValues(array) {
   const bookArray = [];
